@@ -1,0 +1,65 @@
+.wrapper {
+  min-height: 100vh;
+  background-color: #f9d080;
+}
+
+.search {
+  display: flex;
+  flex-direction: row;
+  &__btn {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    border-color: orange;
+    border-radius: 5px;
+  }
+}
+
+.movieWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__heading {
+    padding-top: 50px;
+  }
+  &__info {
+    margin: 0 0 20px 0;
+  }
+}
+
+.result {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2%;
+  margin: 10px;
+}
+
+.content {
+  width: 100%;
+  margin: 60px 0 60px 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: beige;
+  height: 600px;
+  width: 400px;
+  margin: 10px;
+  border-radius: 5px;
+
+  &__title {
+    padding: 5px;
+  }
+  &__img {
+    margin: 10xp;
+    &--img {
+      width: 100%;
+    }
+  }
+}
