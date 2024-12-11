@@ -20,8 +20,7 @@ let container: HTMLDivElement = document.getElementById(
 
 let searchContainer: HTMLDivElement = document.createElement("div");
 let searchHeading: HTMLHeadElement = document.createElement("h2");
-let searchInformation: HTMLParagraphElement =
-  document.createElement("p");
+let searchInformation: HTMLParagraphElement = document.createElement("p");
 
 searchContainer.classList.add("movieWrapper");
 searchHeading.classList.add("movieWrapper__heading");
@@ -33,14 +32,13 @@ searchInformation.innerText = "Search for a movie";
 // Search-bar and button
 let searchDiv: HTMLDivElement = document.createElement("div");
 let searchBar: HTMLInputElement = document.createElement("input");
-let searchButton: HTMLButtonElement =
-  document.createElement("button");
+let searchButton: HTMLButtonElement = document.createElement("button");
 
 searchDiv.classList.add("search");
 searchBar.classList.add("search__bar");
 searchButton.classList.add("search__btn");
 
-searchButton.type = "sumbit";
+searchButton.type = "submit";
 searchBar.type = "text";
 
 searchButton.innerHTML = "Search";
@@ -57,7 +55,7 @@ searchContent.classList.add("content");
 searchButton.addEventListener("click", () => {
   axios
     .get<IOmdbResponse>(
-      "http://omdbapi.com?apikey=8a61fbc3&s=" + searchBar.value
+      `http://www.omdbapi.com/?apikey=${API_KEY}&s=${searchBar.value}`
     )
     .then((response) => {
       loadResult(response.data.Search);
@@ -68,16 +66,11 @@ searchButton.addEventListener("click", () => {
 function loadResult(searchMovie: IMovie[]) {
   searchResultDiv.innerHTML = "";
   for (let i = 0; i < searchMovie.length; i++) {
-    let searchMovieDiv: HTMLDivElement =
-      document.createElement("div");
-    let searchMovieTitle: HTMLHeadingElement =
-      document.createElement("h3");
-    let searchMoviePosterDiv: HTMLDivElement =
-      document.createElement("div");
-    let searchMoviePoster: HTMLImageElement =
-      document.createElement("img");
-    let searchMovieYear: HTMLHeadingElement =
-      document.createElement("h3");
+    let searchMovieDiv: HTMLDivElement = document.createElement("div");
+    let searchMovieTitle: HTMLHeadingElement = document.createElement("h3");
+    let searchMoviePosterDiv: HTMLDivElement = document.createElement("div");
+    let searchMoviePoster: HTMLImageElement = document.createElement("img");
+    let searchMovieYear: HTMLHeadingElement = document.createElement("h3");
 
     searchMovieDiv.classList.add("card");
     searchMovieTitle.classList.add("card__title");
